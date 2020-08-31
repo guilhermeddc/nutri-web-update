@@ -5,10 +5,10 @@ import {Container} from './styles';
 
 interface IRecipeCard {
   image: string;
-  tagImage: string;
+  tagImage?: string;
   title: string;
   color: string;
-  tag: string;
+  tag?: string;
   description: string;
   link: number;
 }
@@ -25,10 +25,12 @@ const RecipeCard: React.FC<IRecipeCard> = ({
   return (
     <Container>
       <img src={image} alt="foto da receita" />
-      <span>
-        <img src={tagImage} alt={title} />
-        <p style={{color}}>{tag}</p>
-      </span>
+      {tag && tagImage && (
+        <span>
+          <img src={tagImage} alt={title} />
+          <p style={{color}}>{tag}</p>
+        </span>
+      )}
       <h3>{title}</h3>
       <p>{`${description.slice(0, 200)}...`}</p>
       <Link to={`/recipe/${link}`}>Mais detalhes</Link>

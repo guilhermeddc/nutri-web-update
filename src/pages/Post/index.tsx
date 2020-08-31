@@ -85,6 +85,8 @@ const Blog: React.FC = () => {
 
       await api.post('p-comments/', data);
 
+      document.getElementById('btn-reset')?.click();
+
       setFormData({
         name: '',
         body: '',
@@ -154,7 +156,9 @@ const Blog: React.FC = () => {
             onChange={handleInputChange}
           />
           <div>
-            <button type="reset">Limpar</button>
+            <button id="btn-reset" type="reset">
+              Limpar
+            </button>
             <button type="submit">Comentar</button>
           </div>
         </Form>

@@ -229,6 +229,12 @@ export const Recipes = styled.section`
   padding: 50px 0 50px;
   width: 100%;
   background-color: #deeff7;
+
+  div article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 export const Contact = styled.section`
